@@ -1,0 +1,20 @@
+{% load static %}
+    <!Doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Le Blog</title>
+        {% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endcomment %}
+    </head>
+    <body>
+        <h1>You reach destination</h1>
+
+        {% for blog_post in posts %}
+            <a href=" {% url 'blog-post' slug=blog_post.id %}">
+                <h1>{{forloop.counter}}. {{ blog_post.title }}</h1>
+                <hr>
+            </a>
+        {% endfor %}
+        <p>{{name|}}</p>
+        </body>
+</html>

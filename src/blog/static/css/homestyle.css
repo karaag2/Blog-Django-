@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+input{
+    outline: none;
+    border: none;
+}
+
+header{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 25px 0;
+    background-color: #000;
+    color: aliceblue;
+}
+header nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: x-large;
+}
+
+.container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+.container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+    width: 500px;
+}
+.contour{position: relative;
+    padding: 20px 15px;
+    border: 1px solid #b3b1b1;
+    border-radius:10px ;
+    z-index: 0;
+}
+.contour label{
+    position: absolute;
+    top: -0.6em;
+    left: 10%;
+    color: #b3b1b1;
+    z-index: 5%;
+    background-color: white;
+    padding: 0 5px;
+}

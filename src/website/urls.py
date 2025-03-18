@@ -17,14 +17,14 @@ Including another URLconf
 from os import name
 from django.contrib import admin
 from django.urls import path
-from blog.views import vieewwww,blog_post
+from blog.views import blog_posts,blog_post,homer
 from website.views import home
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="website-home"),
-    path('blog/', vieewwww),
-    # path('blogposts', blog_posts),
-    path('blog/<str:slug>/', blog_post, name="blog_post"),
+    path('blog/', blog_posts,name="blog-index"),
+    path('bloghome', homer),
+    path('blog/<str:slug>/', blog_post, name="blog-post"),
 ]

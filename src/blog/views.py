@@ -7,13 +7,14 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 
 
 # Create your views here.
-def vieewwww(request):
-    r = HttpResponse()
-    r.content = "{ '1': 'Bonjour tout le monde' }"
-    r.status_code = 404
-    r['Content-Type'] = 'application/json'
-    return r
-@user_passes_test(lambda u: u.username == "macbook")
-def  blog_post(request, slug):
-    blog_post= get_object_or_404(BlogPost, pk=slug)
-    return HttpResponse(blog_post.description)
+def blog_posts(request):
+    posts = BlogPost.objects.all()
+    name = "<script>alert('Hello world')</script>"
+    return render(request, "blog/index.html", context={"posts": posts, 'name':name})
+
+def blog_post(request,slug):
+    post = BlogPost.objects.get(pk=slug)
+    return render(request, "blog/post.html", context={"post": post})
+
+def homer(request):
+    return render(request, "blog/base.html")
