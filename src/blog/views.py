@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from blog.models import BlogPost
 from django.template.loader import render_to_string
 from django.contrib.auth.decorators import login_required, user_passes_test 
-
+from website.forms import CreateArticle
 
 # Create your views here.
 def blog_posts(request):
@@ -18,3 +18,6 @@ def blog_post(request,slug):
 
 def homer(request):
     return render(request, "blog/base.html")
+
+def signUp(request):
+    return HttpResponse("Cree mon compte")

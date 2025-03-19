@@ -18,13 +18,12 @@ from os import name
 from django.contrib import admin
 from django.urls import path
 from blog.views import blog_posts,blog_post,homer
-from website.views import home
+from website.views import home, signup
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', home, name="website-home"),
-    path('blog/', blog_posts,name="blog-index"),
-    path('bloghome', homer),
-    path('blog/<str:slug>/', blog_post, name="blog-post"),
+    path('admin/', admin.site.urls),
+    path('blob/article-<str:slug>/', blog_post, name="blog-post"),
+    path('signup', signup, name="shirorlr"),
 ]
